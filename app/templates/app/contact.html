@@ -1,0 +1,26 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <p class="text-center">Есть вопросы, идеи или предложения? Мы всегда на связи!</p>
+
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    📧 <strong>Email:</strong> support@neuroshop.ai
+                </li>
+                <li class="list-group-item">
+                    📱 <strong>Telegram:</strong> <a href="https://t.me/neuroshop" target="_blank">@neuroshop</a>
+                </li>
+                <li class="list-group-item">
+                    🌐 <strong>Instagram:</strong> <a href="https://instagram.com/neuroshop.ai" target="_blank">@neuroshop.ai</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <p class="text-center mt-4">Или напиши нам через <a href="{% url 'pool' %}">форму обратной связи</a>.</p>
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">{{ title }}</h2>
+
+    {% if form %}
+    <form method="post" class="bg-white p-4 rounded shadow-sm">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            {{ form.name.label_tag }}
+            {{ form.name }}
+        </div>
+        <div class="mb-3">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+        </div>
+        <div class="mb-3">
+            {{ form.rating.label_tag }}
+            {{ form.rating }}
+        </div>
+        <div class="mb-3">
+            {{ form.topics.label_tag }}
+            {{ form.topics }}
+        </div>
+        <div class="mb-3">
+            {{ form.suggestions.label_tag }}
+            {{ form.suggestions }}
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Отправить</button>
+    </form>
+    {% else %}
+    <div class="alert alert-success text-center" role="alert">
+        Спасибо за ваш отзыв!
+    </div>
+
+    <ul class="list-group mb-3">
+        <li class="list-group-item"><strong>Имя:</strong> {{ data.name }}</li>
+        <li class="list-group-item"><strong>Email:</strong> {{ data.email }}</li>
+        <li class="list-group-item"><strong>Оценка:</strong> {{ data.rating }}</li>
+        <li class="list-group-item"><strong>Что понравилось:</strong> {{ data.topics|join:", " }}</li>
+        <li class="list-group-item"><strong>Предложения:</strong> {{ data.suggestions }}</li>
+    </ul>
+
+    <a href="{% url 'pool' %}" class="btn btn-outline-secondary">Отправить ещё один отзыв</a>
+    {% endif %}
+</div>
+{% endblock %}

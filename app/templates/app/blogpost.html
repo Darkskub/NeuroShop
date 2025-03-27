@@ -1,0 +1,57 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+<div class="container mt-4">
+
+    <!-- Заголовок -->
+    <h2 class="text-center mb-4">{{ post_1.title }}</h2>
+
+    <!-- Картинка (если есть) -->
+    {% if post_1.image and post_1.image.name != "blog_images/temp.jpg" %}
+    <img src="{{ post_1.image.url }}" class="img-fluid rounded mb-3" alt="Картинка статьи блога">
+    {% endif %}
+
+    <!-- Текст статьи -->
+    <p>{{ post_1.content|linebreaksbr }}</p>
+
+    <!-- Теги -->
+    {% if post_1.tags.all %}
+    <div class="mb-3">
+        <strong>Теги:</strong>
+        {% for tag in post_1.tags.all %}
+        <span class="badge bg-secondary">{{ tag.name }}</span>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Форма комментария -->
+    {% if user.is_authenticated %}
+    <h3 class="mt-5">Добавить комментарий</h3>
+    <form method="post" class="mb-5">
+        {% csrf_token %}
+        {{ form.text.label_tag }}
+        {{ form.text }}
+        <button type="submit" class="btn btn-primary mt-2">Отправить комментарий</button>
+    </form>
+    {% else %}
+    <div class="alert alert-info mt-5">
+        <h5>Для добавления комментария, пожалуйста, <a href="{% url 'login' %}">авторизуйтесь</a>.</h5>
+    </div>
+    {% endif %}
+
+    <!-- Комментарии -->
+    <h4 class="mt-4">Комментарии:</h4>
+    {% for comment in comments %}
+    <hr>
+    <div class="mb-3">
+        <small class="text-muted">{{ comment.date|date:"d.m.Y H:i" }}</small><br>
+        <strong>{{ comment.author }}</strong>
+        <p>{{ comment.text|linebreaksbr }}</p>
+    </div>
+    {% empty %}
+    <p>Комментариев пока нет.</p>
+    {% endfor %}
+
+    <p><a href="{% url 'blog' %}">← Назад</a></p>
+</div>
+{% endblock %}

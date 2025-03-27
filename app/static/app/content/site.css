@@ -1,0 +1,130 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Шапка */
+header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+    .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+.navbar-header .navbar-brand {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navbar-toggle {
+    background-color: #333;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+    .navbar-toggle .icon-bar {
+        background-color: white;
+        display: block;
+        width: 22px;
+        height: 2px;
+        margin: 4px 0;
+    }
+
+.navbar-collapse {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+    .navbar-nav li {
+        margin: 0 10px;
+    }
+
+    .navbar-nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        display: block;
+    }
+
+        .navbar-nav a:hover {
+            background-color: #575757;
+            border-radius: 5px;
+        }
+
+/* Основной контент */
+section {
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ссылки */
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+/* Картинки */
+img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Список */
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+/* Подвал */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ddd;
+    margin-top: 20px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none;
+    background-color: black;
+    mask-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M4.854 1.146a.5.5 0 0 1 0 .708L2.707 4l2.147 2.146a.5.5 0 0 1-.708.708l-2.5-2.5a.5.5 0 0 1 0-.708l2.5-2.5a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+    -webkit-mask-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M4.854 1.146a.5.5 0 0 1 0 .708L2.707 4l2.147 2.146a.5.5 0 0 1-.708.708l-2.5-2.5a.5.5 0 0 1 0-.708l2.5-2.5a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+    transform: scaleX(-1); /* Отзеркалить стрелку вправо */
+}
+
