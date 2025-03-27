@@ -36,7 +36,21 @@
 
 ## 📁 Структура проекта
 
-NeuroShop/ ├── app/ │ ├── templates/app/ │ ├── static/app/ │ ├── models.py │ ├── views.py │ └── forms.py ├── media/ │ ├── blog_images/ │ ├── videos/ │ └── posters/ ├── static/ ├── templates/ ├── manage.py └── requirements.txt
+NeuroShop/
+├── app/
+│   ├── templates/app/
+│   ├── static/app/
+│   ├── models.py
+│   ├── views.py
+│   └── forms.py
+├── media/
+│   ├── blog_images/
+│   ├── videos/
+│   └── posters/
+├── static/
+├── templates/
+├── manage.py
+└── requirements.txt
 
 yaml
 Копировать
